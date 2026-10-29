@@ -1,0 +1,1054 @@
+/* =====================================
+   1. WARNA WEBSITE
+===================================== */
+
+:root {
+  --bg: #fffdf8;
+  --bg-soft: #f1f5ed;
+  --bg-peach: #fff0e7;
+  --card: #ffffff;
+
+  --primary: #386b58;
+  --primary-dark: #254c3d;
+  --sage: #b9d0b8;
+  --peach: #e9bba6;
+
+  --text: #25342c;
+  --muted: #68736b;
+  --border: #dfe7dd;
+
+  --shadow: 0 10px 30px rgba(39, 70, 51, 0.08);
+}
+
+/* =====================================
+   2. PENGATURAN DASAR
+===================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =====================================
+   3. NAVBAR
+===================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+
+.navbar {
+  max-width: 1200px;
+  min-height: 76px;
+  margin: auto;
+  padding: 12px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+
+  padding: 9px 14px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: var(--bg-soft);
+  color: var(--primary);
+}
+
+.dark-btn {
+  border: none;
+  border-radius: 25px;
+
+  background: var(--primary-dark);
+  color: white;
+
+  padding: 10px 17px;
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
+
+  transition: 0.3s;
+}
+
+.dark-btn:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 25px;
+}
+
+/* =====================================
+   4. HOME
+===================================== */
+
+.home {
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(185, 208, 184, 0.35),
+      transparent 35%
+    ),
+    linear-gradient(135deg, var(--bg) 35%, var(--bg-soft) 100%);
+}
+
+.home-container {
+  max-width: 1200px;
+  min-height: 610px;
+  margin: auto;
+  padding: 80px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.home-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.home-label {
+  display: inline-block;
+  padding: 7px 15px;
+  margin-bottom: 22px;
+
+  background: var(--bg-soft);
+  color: var(--primary);
+
+  border: 1px solid var(--border);
+  border-radius: 25px;
+
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hello {
+  color: var(--muted);
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.home h1 {
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin-bottom: 18px;
+}
+
+.home h1 span {
+  color: var(--primary);
+}
+
+.home-subtitle {
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.identitas {
+  margin-bottom: 30px;
+  padding-left: 18px;
+  border-left: 3px solid var(--sage);
+}
+
+.identitas p {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 9px;
+  font-size: 14px;
+}
+
+.identitas strong {
+  width: 110px;
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+.identitas span {
+  color: var(--text);
+}
+
+.home-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* =====================================
+   5. TOMBOL
+===================================== */
+
+.btn {
+  display: inline-block;
+  padding: 12px 23px;
+
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  border: 2px solid var(--primary);
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* =====================================
+   6. FOTO PROFIL BULAT
+===================================== */
+
+.foto-container {
+  width: 330px;
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.foto-decoration {
+  width: 310px;
+  height: 310px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--sage), var(--bg-peach));
+
+  border: 8px solid var(--card);
+  box-shadow: var(--shadow);
+}
+
+.foto-profil {
+  width: 260px;
+  height: 260px;
+
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--primary);
+}
+
+.foto-profil img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.foto-caption {
+  background: var(--card);
+  color: var(--primary);
+
+  padding: 10px 18px;
+  border: 1px solid var(--border);
+  border-radius: 25px;
+
+  font-size: 13px;
+  font-weight: bold;
+  box-shadow: var(--shadow);
+}
+
+/* =====================================
+   7. SECTION UMUM
+===================================== */
+
+.section {
+  padding: 90px 30px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-label {
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  font-size: 34px;
+  margin: 8px 0 12px;
+}
+
+.section-heading h2 span {
+  color: var(--primary);
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 650px;
+  margin: auto;
+}
+
+/* =====================================
+   8. TENTANG SAYA
+===================================== */
+
+.tentang-section {
+  background: var(--bg);
+}
+
+.tentang-container {
+  max-width: 1150px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 25px;
+  align-items: start;
+}
+
+.about-card,
+.education-card {
+  background: var(--card);
+  padding: 30px;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.about-card {
+  border-top: 5px solid var(--peach);
+}
+
+.education-card {
+  border-top: 5px solid var(--sage);
+}
+
+.about-card h3,
+.education-card h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.about-card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  background: var(--primary);
+  color: white;
+}
+
+td {
+  background: var(--card);
+}
+
+tbody tr:hover td {
+  background: var(--bg-soft);
+}
+
+/* =====================================
+   9. SKILL
+===================================== */
+
+.skill-section {
+  background: var(--bg-soft);
+}
+
+.skill-list {
+  max-width: 1100px;
+  margin: auto;
+
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.skill-card {
+  background: var(--card);
+  padding: 25px;
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.skill-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--bg-peach);
+  border-radius: 14px;
+
+  font-size: 24px;
+  margin-bottom: 17px;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 13px;
+}
+
+.progress {
+  height: 10px;
+  background: var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+
+  background: linear-gradient(90deg, var(--primary), #92b69a);
+
+  border-radius: 20px;
+}
+
+/* =====================================
+   10. PROJECT
+===================================== */
+
+.project-section {
+  background: var(--bg);
+}
+
+.project-container {
+  max-width: 1150px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  overflow: hidden;
+  box-shadow: var(--shadow);
+
+  display: flex;
+  flex-direction: column;
+
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 35px rgba(39, 70, 51, 0.14);
+}
+
+/* Area gambar bisa diklik */
+
+.project-image-link {
+  display: block;
+  overflow: hidden;
+}
+
+.project-image {
+  height: 200px;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+
+/* Foto hasil project */
+
+.project-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  padding: 12px;
+
+  transition: transform 0.3s;
+}
+
+.project-image-link:hover img {
+  transform: scale(1.05);
+}
+
+/* Warna background setiap project */
+
+.project-card:nth-child(1) .project-image {
+  background: #e2eddf;
+}
+
+.project-card:nth-child(2) .project-image {
+  background: #fbe5d9;
+}
+
+.project-card:nth-child(3) .project-image {
+  background: #e2edf3;
+}
+
+.project-content {
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-category {
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.project-content h3 {
+  font-size: 19px;
+  margin: 10px 0 15px;
+}
+
+.project-content p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.project-link {
+  display: inline-block;
+  align-self: flex-start;
+
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: bold;
+
+  padding: 9px 0;
+  transition: 0.3s;
+}
+
+.project-link:hover {
+  color: var(--primary-dark);
+  transform: translateX(4px);
+}
+
+/* =====================================
+   11. KONTAK
+===================================== */
+
+.kontak-section {
+  background: var(--bg-soft);
+}
+
+.kontak-container {
+  max-width: 1050px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.contact-info {
+  background: var(--primary);
+  color: white;
+
+  padding: 40px;
+  border-radius: 18px;
+}
+
+.contact-icon {
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+.contact-info h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 14px;
+  margin-bottom: 18px;
+  line-height: 1.9;
+}
+
+.contact-note {
+  display: inline-block;
+  margin-top: 20px;
+
+  padding: 12px 15px;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 13px;
+}
+
+.contact-form {
+  background: var(--card);
+  padding: 35px;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  box-shadow: var(--shadow);
+}
+
+.contact-form label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px 15px;
+
+  background: var(--bg);
+  color: var(--text);
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  font-size: 14px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--sage);
+  border-color: var(--primary);
+}
+
+.contact-form button {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+#formStatus {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#formStatus.error {
+  color: #c44848;
+}
+
+#formStatus.success {
+  color: #278653;
+}
+
+#hasilForm {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  padding: 20px;
+  margin-top: 10px;
+
+  overflow-wrap: anywhere;
+}
+
+#hasilForm h3 {
+  margin-bottom: 10px;
+}
+
+#hasilForm p {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+#hasilForm[hidden] {
+  display: none;
+}
+
+/* =====================================
+   12. FOOTER
+===================================== */
+
+footer {
+  background: var(--primary-dark);
+  color: white;
+
+  padding: 25px 20px;
+  text-align: center;
+
+  font-size: 13px;
+}
+
+/* =====================================
+   13. DARK MODE
+===================================== */
+
+body.dark-mode {
+  --bg: #171e1b;
+  --bg-soft: #222e27;
+  --bg-peach: #3b302b;
+  --card: #27352d;
+
+  --primary: #a4d2af;
+  --primary-dark: #315d46;
+  --sage: #6f987a;
+  --peach: #c48f7c;
+
+  --text: #f0f4ef;
+  --muted: #c2cdc3;
+  --border: #435347;
+
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+body.dark-mode .btn-primary,
+body.dark-mode .contact-info {
+  background: #315d46;
+  color: white;
+}
+
+body.dark-mode .btn-primary {
+  border-color: #315d46;
+}
+
+body.dark-mode .dark-btn {
+  background: #e9cda5;
+  color: #302b25;
+}
+
+body.dark-mode th {
+  background: #315d46;
+}
+
+body.dark-mode .project-category,
+body.dark-mode .project-link {
+  color: var(--primary);
+}
+
+/* =====================================
+   14. RESPONSIVE TABLET
+===================================== */
+
+@media (max-width: 1000px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .nav-menu {
+    gap: 2px;
+  }
+
+  .nav-link {
+    padding: 8px 9px;
+  }
+
+  .home-container {
+    gap: 30px;
+  }
+
+  .foto-container {
+    width: 280px;
+  }
+
+  .foto-decoration {
+    width: 270px;
+    height: 270px;
+  }
+
+  .foto-profil {
+    width: 225px;
+    height: 225px;
+  }
+
+  .tentang-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =====================================
+   15. RESPONSIVE HP
+===================================== */
+
+@media (max-width: 700px) {
+  /* NAVBAR */
+
+  .navbar {
+    flex-wrap: wrap;
+    gap: 12px;
+    min-height: 70px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .dark-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .nav-menu {
+    display: none;
+    order: 4;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 11px 15px;
+  }
+
+  /* HOME */
+
+  .home-container {
+    min-height: auto;
+    padding: 60px 20px;
+
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 35px;
+  }
+
+  .home-text {
+    width: 100%;
+  }
+
+  .home h1 {
+    font-size: 34px;
+  }
+
+  .home-subtitle {
+    font-size: 15px;
+  }
+
+  .home-label {
+    font-size: 10px;
+  }
+
+  .identitas {
+    max-width: 430px;
+    margin: 0 auto 30px;
+    text-align: left;
+  }
+
+  .identitas p {
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 12px;
+  }
+
+  .identitas strong {
+    width: auto;
+  }
+
+  .home-buttons {
+    justify-content: center;
+  }
+
+  /* FOTO PROFIL */
+
+  .foto-container {
+    width: 100%;
+  }
+
+  .foto-decoration {
+    width: 245px;
+    height: 245px;
+  }
+
+  .foto-profil {
+    width: 205px;
+    height: 205px;
+  }
+
+  /* SECTION */
+
+  .section {
+    padding: 65px 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 28px;
+  }
+
+  .about-card,
+  .education-card {
+    padding: 22px;
+  }
+
+  /* SKILL */
+
+  .skill-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* PROJECT */
+
+  .project-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    height: 220px;
+  }
+
+  /* KONTAK */
+
+  .kontak-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 25px;
+  }
+}
